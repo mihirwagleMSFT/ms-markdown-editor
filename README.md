@@ -46,7 +46,7 @@ npm run preview
 ## Tech Stack
 
 | Layer | Technology |
-|-------|------------|
+|-------|-----------|
 | Framework | React 19 + TypeScript |
 | Build | Vite 7 |
 | Editor | TipTap (ProseMirror) |

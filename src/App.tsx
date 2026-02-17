@@ -18,10 +18,10 @@ This is a **WYSIWYG markdown editor** built for the Microsoft Data Integration t
 
 ## Features
 
-- **Rich text editing** \u2014 write naturally with formatting toolbar
-- **Markdown export** \u2014 download your content as \`.md\` files
-- **Code view** \u2014 toggle to see and edit raw markdown
-- **Tables, code blocks, task lists** \u2014 full markdown support
+- **Rich text editing** — write naturally with formatting toolbar
+- **Markdown export** — download your content as \`.md\` files
+- **Code view** — toggle to see and edit raw markdown
+- **Tables, code blocks, task lists** — full markdown support
 
 ## Getting Started
 
