@@ -5,9 +5,11 @@ A WYSIWYG markdown editor built for the Microsoft Data Integration team. Visual-
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?logo=typescript&logoColor=white)
 ![React](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=black)
 ![Fluent UI](https://img.shields.io/badge/Fluent%20UI-0078D4?logo=microsoft&logoColor=white)
+![Electron](https://img.shields.io/badge/Electron-47848F?logo=electron&logoColor=white)
 
 ## Features
 
+- **Desktop app** — Standalone `.app` (macOS) / `.exe` (Windows) / AppImage (Linux) — no browser needed
 - **Visual-first editing** — WYSIWYG is the default mode; write naturally without touching markdown syntax
 - **Fluent UI toolbar** — Microsoft-native look and feel with full formatting controls
 - **Code view toggle** — Switch to raw markdown editing with `Ctrl+Shift+M` (or `Cmd+Shift+M` on Mac)
@@ -36,7 +38,30 @@ npm run dev
 
 Open [http://localhost:5173](http://localhost:5173) in your browser.
 
-### Build for Production
+### Desktop App
+
+Run locally as an Electron app during development:
+
+```bash
+npm run electron:dev
+```
+
+Build distributable packages:
+
+```bash
+# macOS (.app + .dmg)
+npm run electron:build:mac
+
+# Windows (.exe installer)
+npm run electron:build:win
+
+# Linux (AppImage)
+npm run electron:build:linux
+```
+
+Output is written to the `release/` directory.
+
+### Build for Production (web)
 
 ```bash
 npm run build
@@ -54,6 +79,7 @@ npm run preview
 | Icons | Fluent UI Icons |
 | Syntax Highlighting | lowlight (highlight.js) |
 | Markdown ↔ HTML | Turndown + Showdown |
+| Desktop | Electron 40 |
 
 ## Project Structure
 
@@ -70,6 +96,9 @@ src/
 ├── App.css                 # Layout styles
 ├── index.css               # Global reset
 └── main.tsx                # Entry point
+electron/
+├── main.cjs                # Electron main process
+└── preload.cjs             # Preload script (context bridge)
 ```
 
 ## Keyboard Shortcuts

@@ -1,0 +1,44 @@
+appId: com.microsoft.dataintegration.markdown-editor
+productName: Markdown Editor
+copyright: Copyright © 2026 Microsoft Data Integration
+
+directories:
+  output: release
+  buildResources: build
+
+files:
+  - dist/**/*
+  - electron/**/*
+  - "!node_modules/**/*"
+
+mac:
+  category: public.app-category.developer-tools
+  target:
+    - target: dmg
+      arch:
+        - x64
+        - arm64
+    - target: zip
+      arch:
+        - x64
+        - arm64
+
+win:
+  target:
+    - target: nsis
+      arch:
+        - x64
+  artifactName: "${productName}-${version}-Setup.${ext}"
+
+nsis:
+  oneClick: true
+  perMachine: false
+  allowToChangeInstallationDirectory: false
+  deleteAppDataOnUninstall: true
+
+linux:
+  target:
+    - target: AppImage
+      arch:
+        - x64
+  category: Development
