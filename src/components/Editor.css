@@ -1,0 +1,242 @@
+.editor-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border: 1px solid var(--colorNeutralStroke1);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--colorNeutralBackground1);
+}
+
+.editor-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px 32px;
+}
+
+/* TipTap editor styles */
+.editor-content {
+  outline: none;
+  min-height: 100%;
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--colorNeutralForeground1);
+}
+
+.editor-content:focus {
+  outline: none;
+}
+
+/* Headings */
+.tiptap h1 { font-size: 2em; font-weight: 600; margin: 0.67em 0; color: var(--colorNeutralForeground1); }
+.tiptap h2 { font-size: 1.5em; font-weight: 600; margin: 0.83em 0; color: var(--colorNeutralForeground1); }
+.tiptap h3 { font-size: 1.17em; font-weight: 600; margin: 1em 0; color: var(--colorNeutralForeground1); }
+.tiptap h4 { font-size: 1em; font-weight: 600; margin: 1.33em 0; color: var(--colorNeutralForeground1); }
+.tiptap h5 { font-size: 0.83em; font-weight: 600; margin: 1.67em 0; }
+.tiptap h6 { font-size: 0.67em; font-weight: 600; margin: 2.33em 0; }
+
+/* Paragraphs */
+.tiptap p {
+  margin: 0.5em 0;
+}
+
+.tiptap p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  float: left;
+  color: var(--colorNeutralForeground4);
+  pointer-events: none;
+  height: 0;
+  font-style: italic;
+}
+
+/* Lists */
+.tiptap ul,
+.tiptap ol {
+  padding-left: 1.5em;
+  margin: 0.5em 0;
+}
+
+.tiptap li {
+  margin: 0.2em 0;
+}
+
+.tiptap ul[data-type="taskList"] {
+  list-style: none;
+  padding-left: 0;
+}
+
+.tiptap ul[data-type="taskList"] li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.tiptap ul[data-type="taskList"] li > label {
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.tiptap ul[data-type="taskList"] li > div {
+  flex: 1;
+}
+
+/* Blockquotes */
+.tiptap blockquote {
+  border-left: 3px solid var(--colorBrandBackground);
+  padding-left: 16px;
+  margin: 0.5em 0;
+  color: var(--colorNeutralForeground2);
+  font-style: italic;
+}
+
+/* Code */
+.tiptap code {
+  background: var(--colorNeutralBackground3);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: 'Cascadia Code', 'Fira Code', 'Consolas', monospace;
+  font-size: 0.9em;
+  color: var(--colorBrandForeground1);
+}
+
+.tiptap pre {
+  background: var(--colorNeutralBackground3);
+  border-radius: 8px;
+  padding: 16px;
+  margin: 0.75em 0;
+  overflow-x: auto;
+}
+
+.tiptap pre code {
+  background: none;
+  padding: 0;
+  color: var(--colorNeutralForeground1);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* Links */
+.tiptap a {
+  color: var(--colorBrandForeground1);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.tiptap a:hover {
+  color: var(--colorBrandForeground2);
+}
+
+/* Images */
+.tiptap img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin: 0.5em 0;
+}
+
+.tiptap img.ProseMirror-selectednode {
+  outline: 2px solid var(--colorBrandBackground);
+  border-radius: 4px;
+}
+
+/* Tables */
+.tiptap table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 0.75em 0;
+  overflow: hidden;
+  table-layout: fixed;
+}
+
+.tiptap th,
+.tiptap td {
+  border: 1px solid var(--colorNeutralStroke2);
+  padding: 8px 12px;
+  text-align: left;
+  vertical-align: top;
+  min-width: 80px;
+}
+
+.tiptap th {
+  background: var(--colorNeutralBackground3);
+  font-weight: 600;
+}
+
+.tiptap td {
+  background: var(--colorNeutralBackground1);
+}
+
+.tiptap .selectedCell {
+  background: var(--colorBrandBackground2);
+}
+
+/* Horizontal rule */
+.tiptap hr {
+  border: none;
+  border-top: 1px solid var(--colorNeutralStroke2);
+  margin: 1.5em 0;
+}
+
+/* Mark / Highlight */
+.tiptap mark {
+  background-color: var(--colorPaletteYellowBackground2);
+  padding: 1px 2px;
+  border-radius: 2px;
+}
+
+/* Strikethrough */
+.tiptap s {
+  text-decoration: line-through;
+}
+
+/* Code view textarea */
+.code-view {
+  height: 100%;
+  width: 100%;
+}
+
+.code-view .code-textarea,
+.code-textarea {
+  font-family: 'Cascadia Code', 'Fira Code', 'Consolas', monospace !important;
+  font-size: 13px !important;
+  line-height: 1.5 !important;
+  resize: none !important;
+  min-height: 100% !important;
+  white-space: pre !important;
+  overflow-wrap: normal !important;
+}
+
+/* Syntax highlighting within code blocks */
+.tiptap pre .hljs-comment,
+.tiptap pre .hljs-quote { color: #6a9955; }
+.tiptap pre .hljs-keyword,
+.tiptap pre .hljs-selector-tag,
+.tiptap pre .hljs-addition { color: #569cd6; }
+.tiptap pre .hljs-number,
+.tiptap pre .hljs-string,
+.tiptap pre .hljs-meta .hljs-meta-string,
+.tiptap pre .hljs-literal,
+.tiptap pre .hljs-doctag,
+.tiptap pre .hljs-regexp { color: #ce9178; }
+.tiptap pre .hljs-title,
+.tiptap pre .hljs-section,
+.tiptap pre .hljs-name,
+.tiptap pre .hljs-selector-id,
+.tiptap pre .hljs-selector-class { color: #dcdcaa; }
+.tiptap pre .hljs-attribute,
+.tiptap pre .hljs-attr,
+.tiptap pre .hljs-variable,
+.tiptap pre .hljs-template-variable,
+.tiptap pre .hljs-class .hljs-title,
+.tiptap pre .hljs-type { color: #4ec9b0; }
+.tiptap pre .hljs-symbol,
+.tiptap pre .hljs-bullet,
+.tiptap pre .hljs-subst,
+.tiptap pre .hljs-meta,
+.tiptap pre .hljs-meta .hljs-keyword,
+.tiptap pre .hljs-selector-attr,
+.tiptap pre .hljs-selector-pseudo,
+.tiptap pre .hljs-link { color: #d7ba7d; }
+.tiptap pre .hljs-built_in,
+.tiptap pre .hljs-deletion { color: #c586c0; }

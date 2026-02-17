@@ -1,0 +1,75 @@
+.app-root {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 20px;
+  border-bottom: 1px solid;
+  flex-shrink: 0;
+}
+
+.app-header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.app-logo {
+  flex-shrink: 0;
+}
+
+.app-title {
+  display: flex;
+  flex-direction: column;
+}
+
+.app-title h1 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.2;
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.app-subtitle {
+  font-size: 11px;
+  opacity: 0.7;
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s;
+}
+
+.theme-toggle:hover {
+  background: rgba(128, 128, 128, 0.15);
+}
+
+.app-main {
+  flex: 1;
+  padding: 16px 24px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-main > * {
+  flex: 1;
+  min-height: 0;
+}

@@ -1,0 +1,30 @@
+.toolbar-container {
+  border-bottom: 1px solid var(--colorNeutralStroke2);
+  background: var(--colorNeutralBackground2);
+}
+
+.toolbar-secondary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 8px;
+  border-top: 1px solid var(--colorNeutralStroke3);
+  background: var(--colorNeutralBackground3);
+}
+
+.toolbar-secondary-left {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.toolbar-secondary-right {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.toolbar-btn-active {
+  background-color: var(--colorBrandBackground2) !important;
+  color: var(--colorBrandForeground2) !important;
+}
