@@ -48,8 +48,10 @@ import {
   DismissRegular,
   LineHorizontal124Regular,
   ChevronDown24Regular,
+  QuestionCircle24Regular,
 } from '@fluentui/react-icons';
 import { useState, useCallback } from 'react';
+import { HelpDialog } from './HelpDialog';
 import './EditorToolbar.css';
 
 interface EditorToolbarProps {
@@ -75,6 +77,7 @@ export function EditorToolbar({
   const [imageDialogOpen, setImageDialogOpen] = useState(false);
   const [imageUrl, setImageUrl] = useState('');
   const [imageAlt, setImageAlt] = useState('');
+  const [helpDialogOpen, setHelpDialogOpen] = useState(false);
 
   const handleSetLink = useCallback(() => {
     if (linkUrl) {
@@ -395,6 +398,16 @@ export function EditorToolbar({
             </Tooltip>
           </div>
           <div className="toolbar-secondary-right">
+            <Tooltip content="Help & User Guide" relationship="label">
+              <Button
+                appearance="subtle"
+                size="small"
+                icon={<QuestionCircle24Regular />}
+                onClick={() => setHelpDialogOpen(true)}
+              >
+                Help
+              </Button>
+            </Tooltip>
             <Tooltip
               content={isCodeView ? 'Switch to Visual Editor' : 'Switch to Markdown Source (Ctrl+Shift+M)'}
               relationship="label"
@@ -452,6 +465,9 @@ export function EditorToolbar({
           </DialogBody>
         </DialogSurface>
       </Dialog>
+
+      {/* Help Dialog */}
+      <HelpDialog open={helpDialogOpen} onOpenChange={setHelpDialogOpen} />
 
       {/* Image Dialog */}
       <Dialog open={imageDialogOpen} onOpenChange={(_e, data) => setImageDialogOpen(data.open)}>
